@@ -1,0 +1,15 @@
+Final Report
+Strongest = highest level
+
+SELECT 
+	p.name AS 'Pokemon Name'
+	, tr.trainername AS 'Trainer Name'
+	, pt.pokelevel AS 'Level'
+	, ptype.name AS 'Primary Type'
+	, stype.name AS 'Secondary Type' 
+FROM pokemons p 
+JOIN pokemon_trainer pt ON p.id = pt.pokemon_id 
+JOIN trainers tr ON tr.trainerID = pt.trainerID 
+JOIN types ptype ON ptype.id = p.primary_type 
+JOIN types stype ON stype.id = p.secondary_type 
+ORDER BY pt.pokelevel DESC;
